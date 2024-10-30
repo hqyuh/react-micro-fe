@@ -1,0 +1,6 @@
+{
+  "*.{js,jsx,ts,tsx,css,scss}": [
+    "pnpm lint:fix",
+    "pnpm prettier:fix"
+  ]
+}

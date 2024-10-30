@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "pnpm -r dev",
-    "build": "pnpm -r build",
-    "preview": "pnpm -r preview",
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r --parallel build",
+    "preview": "pnpm -r --parallel preview",
+    "lint": "pnpm -r --parallel run lint",
+    "lint:fix": "pnpm -r --parallel run lint:fix",
+    "prettier": "pnpm -r --parallel run prettier",
+    "prettier:fix": "pnpm -r --parallel run prettier:fix",
     "prepare": "husky"
   },
   "license": "ISC",
   "devDependencies": {
-    "husky": "^8.0.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
     "prettier": "^3.3.3"
   }
 }

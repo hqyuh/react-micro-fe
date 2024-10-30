@@ -1,0 +1,4 @@
+node_modules/
+dist/
+.lintstagedrc.json
+commitlint.config.js
