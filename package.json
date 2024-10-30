@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "install": "pnpm install && pnpm -r install",
-    "postinstall": "pnpm run build",
     "dev": "pnpm -r dev",
     "build": "pnpm -r build",
     "preview": "pnpm -r preview",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "license": "ISC",
   "devDependencies": {

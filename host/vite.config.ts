@@ -2,6 +2,7 @@ import { federation } from '@module-federation/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { dependencies } from './package.json';
+import { resolve } from 'path';
 
 export default defineConfig(() => ({
   server: { fs: { allow: ['.', '../shared'] } },
@@ -30,5 +31,10 @@ export default defineConfig(() => ({
       }
     }),
     react()
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
+  }
 }));

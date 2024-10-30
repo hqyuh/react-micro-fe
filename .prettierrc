@@ -17,6 +17,7 @@
   "vueIndentScriptAndStyle": false,
   "printWidth": 120,
   "endOfLine": "auto",
+  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   "importOrder": ["^src/(.*)$", "^[./]"],
   "importOrderSeparation": true
 }

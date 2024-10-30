@@ -7,6 +7,8 @@ const Remote = lazy(
 );
 
 export default () => {
+  console.log("I'm React from host");
+
   useEffect(() => {
     of('emit')
       .pipe(tap(() => console.log("I'm RxJs from host")))
