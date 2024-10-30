@@ -1,8 +1,9 @@
 import { federation } from '@module-federation/vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-import { dependencies } from './package.json';
 import { resolve } from 'path';
+import { defineConfig } from 'vite';
+
+import { dependencies } from './package.json';
 
 export default defineConfig(() => ({
   server: { fs: { allow: ['.', '../shared'] } },

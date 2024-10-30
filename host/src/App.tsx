@@ -1,27 +1,25 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { of, tap } from 'rxjs';
+import { of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
-const Remote = lazy(
-  // @ts-ignore
-  async () => import('remote/remote-app')
-);
+// @ts-ignore
+const RemoteApp = lazy(() => import('remote/remote-app'));
 
-export default () => {
-  console.log("I'm React from host");
-
+const HostApp = () => {
   useEffect(() => {
     of('emit')
-      .pipe(tap(() => console.log("I'm RxJs from host")))
+      .pipe(tap(() => console.log("I'm RxJS from host")))
       .subscribe();
   }, []);
 
   return (
-    <>
-      <div className='text-3xl font-bold underline'>Host</div>
-
+    <div className='text-3xl font-bold underline'>
+      <div>Host</div>
       <Suspense fallback='Loading...'>
-        <Remote />
+        <RemoteApp />
       </Suspense>
-    </>
+    </div>
   );
 };
+
+export default HostApp;
